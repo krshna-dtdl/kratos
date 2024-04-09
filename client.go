@@ -42,6 +42,7 @@ type clientHeader struct {
 	firmwareName string
 	modelName    string
 	manufacturer string
+	token string
 }
 
 // websocketConnection maintains the websocket connection upstream (to XMiDT).
