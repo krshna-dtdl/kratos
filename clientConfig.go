@@ -48,6 +48,7 @@ type ClientConfig struct {
 	UseSSL               bool
 	CertificatesPath     string
 	PetasosEnabled       bool
+   	Token                string
 }
 
 // QueueConfig is used to configure all the queues used to make kratos asynchronous.
@@ -72,6 +73,7 @@ func NewClient(config ClientConfig) (Client, error) {
 		firmwareName: config.FirmwareName,
 		modelName:    config.ModelName,
 		manufacturer: config.Manufacturer,
+                token:        config.Token,
 	}
 
 	newConnection, connectionURL, err := createConnection(inHeader, config)
@@ -172,6 +174,7 @@ func createConnection(headerInfo *clientHeader, config ClientConfig) (connection
 	headers.Add("X-Webpa-Firmware-Name", headerInfo.firmwareName)
 	headers.Add("X-Webpa-Model-Name", headerInfo.modelName)
 	headers.Add("X-Webpa-Manufacturer", headerInfo.manufacturer)
+	headers.Add("Authorization", "Bearer "+headerInfo.token)
 
 	// make sure destUrl's protocol is websocket (ws)
 	wsURL = strings.Replace(talariaInstance, "http", "ws", 1)
