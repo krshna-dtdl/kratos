@@ -34,3 +34,5 @@ or add it to your go.mod file for your project.
 ## Contributing
 
 Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+
+This is a testing exercise.
