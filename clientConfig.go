@@ -238,7 +238,8 @@ func getTalariaInstance(config ClientConfig, tlsConfig *tls.Config) (string, err
 	}
 
 	if resp.Header.Get("Location") != "" {
-		return resp.Header.Get("Location"), nil
+   		 location := strings.TrimPrefix(resp.Header.Get("Location"), "https,")
+   		 return location, nil
 	}
 
 	// Read response body
