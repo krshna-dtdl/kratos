@@ -1,4 +1,4 @@
-Contribution Guidelines
+Contribution Guideliness
 =======================
 
 We love to see contributions to the project and have tried to make it easy to do so. If you would like to contribute code to this project you can do so through GitHub by forking the repository and sending a pull request.
